@@ -1,0 +1,511 @@
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700');
+
+@import url('https://fonts.googleapis.com/css?family=Fredericka+the+Great');
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  height: 100%;
+  color: rgb(68, 68, 68);
+
+  margin: 0;
+  padding: 0;
+  background-color: #f0f0f0;
+
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.outer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 1fr auto;
+  grid-template-areas:
+    "header"
+    "main"
+    "footer";
+}
+
+#root {
+  height: 100%;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+header {
+  height: 100%;
+  width: 100%;
+  display: grid;
+  place-items: left left;
+  grid-template-columns: 10% 1fr 10%;
+  grid-auto-rows: min-content;
+  grid-template-areas:
+    "logo"
+    "title"
+    "nav-bar"
+    "search";
+  grid-area: header;
+}
+
+header > * {
+  grid-column: 2;
+}
+
+footer {
+  grid-area: footer;
+  color: #a9a9a9;
+  font-size: 0.8rem;
+  height: 100%;
+  display: grid;
+  align-content: center;
+  justify-content: center;
+  text-align: center;
+  /* margin-top: 30px; */
+}
+
+.site-hero-logo {
+  height: 80px;
+}
+
+.main-main {
+  grid-area: main;
+}
+
+.movie-buzz-title {
+  color: #4e4e4e;
+  font-family: "Bitter", serif;
+  font-size: calc(10px + 2vmin);
+  font-weight: 700;
+}
+
+.movie-grid-container {
+  display: grid;
+  padding-left: 10%;
+  padding-right: 10%;
+  padding-top: 50px;
+  place-items: center center;
+  grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+  grid-gap: 25px;
+  grid-area: main;
+}
+
+.movie-container {
+  display: grid;
+  place-items: center center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+  }
+
+.movie-desc {
+  display: grid;
+  place-items: center center;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+}
+
+
+.movie-container img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.movie-desc img {
+  width: 100%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+.movie-fav img {
+  width: 35%;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+@media (min-width: 1224px) {
+  .movie-grid-container {
+    padding-left: 20%;
+    padding-right: 20%;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
+
+.movie-add-button {
+  height: 50px;
+  width: 100%;
+  background: #3273db;
+  transition: background 0.65s ease;
+  display: grid;
+  place-items: center center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+.movie-add-button-sm {
+  height: 50px;
+  width: 20%;
+  background: #3273db;
+  transition: background 0.65s ease;
+  place-items: center center;
+  text-decoration: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+.upcoming-movie-add-button {
+  height: 50px;
+  width: 100%;
+  color: white;
+  background: linear-gradient(135deg, #834dc6, #402250);
+  transition: background 0.65s ease;
+  display: grid;
+  place-items: center center;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
+
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+}
+
+/* Intro Page CSS */
+
+.add-first-movie {
+  display: grid;
+  place-items: center center;
+}
+
+.first-movie-div {
+  border-radius: 10px;
+  background-color: #dddddd;
+  border: 6px dashed white;
+  width: 150px;
+  height: 250px;
+  display: grid;
+  place-items: center center;
+  align-content: center;
+  text-align: center;
+  font-family: "Bitter", serif;
+  cursor: pointer;
+}
+
+.add-first-movie img {
+  width: 30%;
+}
+
+/* END Intro Page CSS */
+
+/* movie-add-button CSS START */
+
+.movie-add-button img {
+  color: #fff;
+  font-weight: bold;
+  height: 60%;
+}
+
+button {
+  outline: none;
+}
+
+/* START LoadMoremovies button */
+
+.load-more-movies-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 60px;
+  padding-bottom: 40px;
+}
+
+.classic-button {
+  display: flex;
+  padding: 15px 50px;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 20px;
+  color: white;
+  background: #3273db;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  border-radius: 5px;
+  /* transform: skewX(-15deg); */
+  border: none;
+  cursor: pointer;
+}
+
+.classic-button-sm {
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+  font-size: 15px;
+  color: white;
+  background: #726e6f;
+  border-radius: 2px;
+  /* transform: skewX(-15deg); */
+  border: none;
+  cursor: pointer;
+}
+
+
+@import url("https://fonts.googleapis.com/css?family=Roboto");
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+  text-align: center;
+}
+
+.tabs {
+  font-size: 15px;
+  padding: 0px;
+  list-style: none;
+  background: #ffffffba;
+  box-shadow: 0px 5px 20px rgba(0, 0, 0, 0.1);
+  display: inline-block;
+  position: relative;
+}
+
+.tabs a {
+  text-decoration: none;
+  color: #85878b;
+  padding: 10px 30px;
+  display: inline-block;
+  position: relative;
+  z-index: 1;
+  transition-duration: 0.6s;
+}
+
+.tabs a.active {
+  color: #fff;
+}
+
+.tabs a i {
+  margin-right: 5px;
+}
+
+.tabs .selector {
+  height: 114%;
+  display: inline-block;
+  position: absolute;
+  left: 0px;
+  top: -7%;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 1px 2px 0px;
+  z-index: 1;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  background: #3273db;
+}
+
+@media (max-width: 600px) {
+  .tabs {
+    font-size: 12px;
+  }
+
+  .tabs a {
+    padding: 10px 12px;
+  }
+
+  .tabs .selector {
+    height: 110%;
+    top: -5%;
+  }
+}
+
+
+.login-container {
+  display: grid;
+  place-items: center;
+}
+
+
+.google-button {
+  /* padding: 15px 26px; */
+  padding: 15px 100px;
+  /* border-radius: 65px; */
+  border-radius: 10px;
+
+  background-color: #3273db;
+  border-color: #3273db;
+
+  font-size: 17px;
+  line-height: 1.17649;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+
+  color: #f0f0f0;
+  cursor: pointer;
+  display: inline-block;
+  min-width: 30px;
+  box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px;
+}
+
+.email-container {
+  padding: 15px 126px;
+  border-radius: 10px;
+  background-color: #3273db;
+  border-color: #3273db;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+  text-align: center;
+  white-space: nowrap;
+  text-decoration: none;
+  border: none;
+  color: #f0f0f0;
+  display: inline-block;
+  min-width: 30px;
+}
+
+.display-name-input,
+.email-input,
+.password-input {
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.existing-account-signin {
+  text-align: center;
+  color: #4e4e4e;
+  padding: 15px 0px;
+  font-size: 17px;
+  line-height: 1.17649;
+  font-weight: 400;
+  letter-spacing: -0.022em;
+  font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica",
+    "Arial", sans-serif;
+}
+
+.email-signup-back-button {
+  text-align: center;
+  padding-top: 20px;
+}
+
+/* Search START */
+
+.search-container {
+  color: #85878b;
+  display: flex;
+  box-sizing: border-box;
+  max-width: 100%;
+  -webkit-box-align: center;
+  align-items: center;
+  min-width: 0px;
+  min-height: 0px;
+  flex-direction: row;
+  outline: none;
+  margin: 0px;
+  border-bottom: 1px solid #85878b;
+  padding: 20px 0px 0px 0px;
+  width: 414px;
+}
+
+.search-input {
+  box-sizing: border-box;
+  font-size: inherit;
+  -webkit-appearance: none;
+  color: inherit;
+  /* font-weight: 600; */
+  width: 100%;
+  padding: 11px;
+  outline: none;
+  background: transparent;
+  margin: 0px;
+  border-radius: 4px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+}
+
+@media (max-width: 500px) {
+  .search-container {
+    width: 230px;
+  }
+}
+
+/* START EmptyMovies componenent CSS */
+
+.no-movies-container {
+  display: grid;
+  place-items: center;
+  padding-top: 50px;
+}
+
+.no-movies-container p {
+  font-size: 16px;
+  text-align: center;
+  line-height: 26px;
+}
+
+.top-hat-man-img {
+  height: 150px;
+}
+
+/* END EmptyMovies componenent CSS */
+
+.createdBy {
+  padding: 25px 0px;
+}
+
+.save-for-later-div {
+  padding: 40px;
+}
+
+.no-movies-message-div {
+  padding: 20px;
+}
+.loginclass {
+  text-align: right;
+}
+
+
+
+.trailer-preview {
+  background-color: #ff3d49;
+  position: absolute;
+  top: -46px;
+  right: 24px;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  color: white;
+  font-size: 36px;
+  text-align: center;
+  padding-top: 13px;
+  &:hover, &:disabled, &:active, &:focus {
+     background-color: #ff3d49;
+     color: white;
+  }
+  i {
+     margin-left: 5px;
+  }
+}
