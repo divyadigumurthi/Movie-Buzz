@@ -152,6 +152,11 @@ const App = () => {
           render={() => <Login setUser={setUser} hideNavBar={setIntroPage} />}
         />
         <Route
+          exact
+          path="/movie/login"
+          render={() => <Login setUser={setUser} hideNavBar={setIntroPage} />}
+        />
+        <Route
           path="/movie/:id"
           render={(props) => <MovieDetails {...props} 
           hideNavBar={setIntroPage} 

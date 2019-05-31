@@ -10,15 +10,23 @@ const Login = props => {
   hideNavBar(true);
 
   return (
-    <div className="login-container">
+    <div className="login-container"> 
       {existingLogin ? (
         <>
+        <div class="row">
+        <div class="col-md-4" >
+
           <Google />
-          <div>
-            <span>OR</span>
+        
           </div>
+          <div class="col-md-2" ><span></span></div>
+          <div class="col-md-4" >
+
           {/* <EmailLogin setUser={setUser} /> */}
           <EmailLogin setUser={setUser} setExistingLogin={setExistingLogin} />
+
+          </div>
+          </div>
         </>
       ) : (
         <EmailSignUp setUser={setUser} setExistingLogin={setExistingLogin} />

@@ -4,7 +4,7 @@ import { animated } from "react-spring";
 import { useFetchMovieDetails } from "../Hooks/fetchMoviesHook";
 import addIcon from "../Images/add.svg";
 import checkedIcon from "../Images/favorite.svg";
-
+import imdbIcon from "../Images/imdb.svg";
 const MovieDetails = props => {
     const [data] = useFetchMovieDetails(
       props.match.params.id
@@ -13,7 +13,7 @@ const MovieDetails = props => {
 
     hideNavBar(true);
  
-    const { poster_path, title, vote_average, overview, tagline, id, videos  } = data;
+    const { poster_path, title, vote_average, overview, tagline, id, imdb_id  } = data;
     const POSTER_PATH = "http://image.tmdb.org/t/p/w500";
     console.log('data '+ loginStatus);
 
@@ -39,7 +39,7 @@ const MovieDetails = props => {
                                       <i class="fa fa-star" aria-hidden="true"></i> 
                                       <p>{vote_average}/10</p>
                                     </div>
-                                    
+                                   <a target="_blank" href={`https://www.imdb.com/title/${imdb_id}`} ><img class="card-img" src={imdbIcon} alt={title} /></a> 
                                     <Button
                                       className="movie-add-button-sm"
                                       onClick={() => setUserMovies(data, user, loginStatus)}
