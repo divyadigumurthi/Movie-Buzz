@@ -3,12 +3,12 @@ import "firebase/firestore";
 import "firebase/auth";
 
 const config = {
-  apiKey: "AIzaSyCooo1VRVb2VMme16mq-EKZ5F01SKmUQxU",
-  authDomain: "moviebuzz-37f7e.firebaseapp.com",
-  databaseURL: "https://moviebuzz-37f7e.firebaseio.com",
-  projectId: "moviebuzz-37f7e",
-  storageBucket: "gs://moviebuzz-37f7e.appspot.com",
-  messagingSenderId: "52739898697"
+  apiKey: "AIzaSyCpelXTIFpyZUTjO3fDzAw-WQBCw9gYvJk",
+  authDomain: "movie-buzz-3bf50.firebaseapp.com",
+  databaseURL: "https://movie-buzz-3bf50.firebaseio.com",
+  projectId: "movie-buzz-3bf50",
+  storageBucket: "gs://movie-buzz-3bf50.appspot.com",
+  messagingSenderId: "462609750163"
 };
 firebase.initializeApp(config);
 

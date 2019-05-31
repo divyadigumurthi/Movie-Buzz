@@ -9,10 +9,11 @@ function useFetchMovies(
 ) {
   const [movieData, setMovieData] = useState([]);
   const [loading, setLoading] = useState(false);
+  const apiKey = "e948b5ff4698866852f32cb8124e21a5";
 
-  const movieEndpointURL = `https://api.themoviedb.org/3/movie/${typeOfMovies}?api_key=d951026be8c262501cf4a37f22f82184&language=en-US&media_type=movie&page=1&primary_release_year=2019&sort_by=popularity.desc&vote_count&region=US`;
+  const movieEndpointURL = `https://api.themoviedb.org/3/movie/${typeOfMovies}?api_key=${apiKey}&language=en-US&media_type=movie&page=1&primary_release_year=2019&sort_by=popularity.desc&vote_count&region=US`;
 
-  const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=d951026be8c262501cf4a37f22f82184&language=en-US&query=${query}&page=1&include_adult=false`;
+  const searchURL = `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&language=en-US&query=${query}&page=1&include_adult=false`;
 
   const fetchMovieData = async () => {
 
@@ -68,10 +69,11 @@ function useFetchMovies(
 
 function useFetchMovieDetails(
   id) {
+    const apiKey = "e948b5ff4698866852f32cb8124e21a5";
     const [movieData, setMovieData] = useState([]);
     const [loading, setLoading] = useState(false);
 
-    const movieDataURL = `https://api.themoviedb.org/3/movie/${id}?api_key=d951026be8c262501cf4a37f22f82184&language=en-US`
+    const movieDataURL = `https://api.themoviedb.org/3/movie/${id}?api_key=${apiKey}&language=en-US`
     const fetchMovieData = async () => {
     try {
       setLoading(true);
