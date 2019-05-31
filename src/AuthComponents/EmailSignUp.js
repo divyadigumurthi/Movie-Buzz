@@ -21,10 +21,7 @@ const EmailSignUp = props => {
   const handleSubmit = async event => {
     event.preventDefault();
 
-    // 1. Create a firestore user
-    // 2. Once the user is created, create a document with the uID
-    // 3. If that uID doesn't already exist, create a new document and set the displayName, email, etc.
-
+  
     try {
       await auth.createUserWithEmailAndPassword(email, password);
     } catch (error) {
